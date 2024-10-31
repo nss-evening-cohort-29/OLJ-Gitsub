@@ -1,0 +1,18 @@
+.navbar {
+    background-color: var(--bg-darker);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link {
+    color: var(--text-primary) !important;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+    color: var(--text-secondary) !important;
+}
+
+.nav-link.active {
+    color: var(--text-primary) !important;
+    border-bottom: 2px solid var(--orange);
+} 
