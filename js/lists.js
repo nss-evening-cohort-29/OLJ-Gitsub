@@ -47,6 +47,40 @@ export const renderRepositories = () => {
     `;
 };
 
+// Add pinned repos rendering
+export const renderPinnedRepos = () => {
+    const container = document.getElementById('pinnedRepos');
+    if (!container) return;
+
+    const pinnedReposHTML = appData.pinnedRepos
+        .map(repo => `
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 bg-dark border-secondary">
+                    <div class="card-body">
+                        <h3 class="h5 mb-1">
+                            <a href="#" class="text-primary text-decoration-none">${repo.name}</a>
+                        </h3>
+                        <p class="text-secondary mb-3">${repo.description}</p>
+                        <div class="d-flex align-items-center">
+                            <span class="me-3">
+                                <span class="text-white">${repo.language}</span>
+                            </span>
+                            <span class="me-3">
+                                <span class="text-white">⭐${repo.stars}</span>
+                            </span>
+                            <span class="me-3">
+                                <span class="text-white">🔱 ${repo.forks}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `)
+        .join('');
+    
+    container.innerHTML = pinnedReposHTML;
+};
+
 // Initialize list based on current page
 document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
@@ -57,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (path.includes('projects.html')) {
         renderProjects();
     } else {
-        // Index
+        // Overview page (index.html)
         renderPinnedRepos();
     }
-}); 
+});
