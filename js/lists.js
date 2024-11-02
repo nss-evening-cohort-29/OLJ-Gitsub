@@ -47,6 +47,24 @@ export const renderRepositories = () => {
     `;
 };
 
+export const renderProjects = () => {
+    const container = document.getElementById('projects');
+    let domString = "";
+    appData.projects.forEach(project => {
+        domString += `<div class="col-md-6 mb-4">
+                <div class="card h-100 bg-dark border-secondary">
+                    <div class="card-body">
+                        <h3 class="h5 mb-1">
+                            <a href="#" class="text-primary text-decoration-none">${project.title}</a>
+                        </h3>
+                        <p class="text-secondary mb-3">${project.description}</p>
+                    </div>
+                </div>
+            </div>`
+    });
+    container.innerHTML = domString;
+}
+
 // Add pinned repos rendering
 export const renderPinnedRepos = () => {
     const container = document.getElementById('pinnedRepos');

@@ -90,6 +90,19 @@ const appData = {
             lastUpdated: "Updated 137 days ago"
         },
     ],
+
+    projects: [
+        {
+            id: 1,
+            title: "Super Cool Project",
+            description: "Wow look how amazing this project is, whoever made this must be really fun to hang out with."
+        },
+        {
+            id: 2,
+            title: "Amazing Project",
+            description: "This project is amazing!"
+        }
+    ]
     
     
     packages: [
