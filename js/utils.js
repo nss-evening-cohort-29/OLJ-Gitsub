@@ -131,6 +131,8 @@ export const renderProfile = () => {
     `;
 };
 
+
+
 // Add this function
 export const renderNavbar = () => {
     const { siteStats } = appData;
