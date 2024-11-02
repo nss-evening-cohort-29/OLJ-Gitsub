@@ -56,3 +56,11 @@ body {
     object-fit: contain;
     border-radius: 5px;
 }
+
+.card-title, .form-label {
+    color: var(--text-primary)
+}
+
+#cards-section {
+    margin-top: 20px;
+}
