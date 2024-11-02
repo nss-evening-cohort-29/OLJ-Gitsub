@@ -15,6 +15,24 @@
     <link rel="stylesheet" href="css/forms.css">
 </head>
 <body>
-    TODO:
+    <div id="navbar"></div>
+    <div id="profileSidebar"></div>
+    <!-- This is where repos will be shown -->
+    <div id="content"></div>
+<!-- This is where repos will be created. -->
+ <div></div>
+    <div id="footer"></div>
+
+    <script type="module">
+        import { loadComponent, renderProfile } from './js/utils.js'; 
+        import {renderRepositories} from './js/lists.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('navbar', './components/navbar.html');
+            loadComponent('footer', './components/footer.html');
+            renderProfile();
+            renderRepositories();
+    });
+    </script>
 </body>
 </html>

@@ -31,6 +31,66 @@ const appData = {
             }
         ]
     },
+
+    repositories: [
+        {repoID: 1, 
+            repoTitle : "Sorting Hat", 
+            repoDescription: "tbd", 
+            repoTags : [
+                {tag: "blah"},
+                {tag: "blah"},
+                {tag: "blah"}
+            ],
+            repoType: "JavaScript", 
+            stars: 6, 
+            branchMerges: 17, 
+            issues: "2 issues needs help",
+            lastUpdated: "Updated 4 days ago"
+        },
+        {repoID: 2, 
+            repoTitle : "Random Repo", 
+            repoDescription: "tbd", 
+            repoTags : [
+                {tag: "blah"},
+                {tag: "blah"},
+                {tag: "blah"}
+            ],
+            repoType: "JavaScript", 
+            stars: 6, 
+            branchMerges: 17, 
+            issues: "9 issues needs help",
+            lastUpdated: "Updated 1 day ago"
+        },
+        {repoID: 3, 
+            repoTitle : "Calculator", 
+            repoDescription: "tbd", 
+            repoTags : [
+                {tag: "blah"},
+                {tag: "blah"},
+                {tag: "blah"}
+            ],
+            repoType: "JavaScript", 
+            stars: 6, 
+            branchMerges: 17,  
+            // issues: "0 issues needs help",
+            lastUpdated: "Updated 68 days ago"
+        },
+        {repoID: 4, 
+            repoTitle : "test-repo", 
+            repoDescription: "tbd", 
+            repoTags : [
+                {tag: "blah"},
+                {tag: "blah"},
+                {tag: "blah"}
+            ],
+            repoType: "JavaScript", 
+            stars: 6, 
+            branchMerges: 17,  
+            // issues: "0 issues needs help",
+            lastUpdated: "Updated 137 days ago"
+        },
+    ],
+    
     
     packages: [
         {
@@ -91,4 +151,5 @@ const appData = {
         ]
     }
 };
+
 export default appData; 
