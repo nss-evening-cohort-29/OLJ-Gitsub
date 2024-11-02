@@ -102,9 +102,8 @@ const appData = {
             title: "Amazing Project",
             description: "This project is amazing!"
         }
-    ]
-    
-    
+    ],
+     
     packages: [
         {
             name: "Docker",
