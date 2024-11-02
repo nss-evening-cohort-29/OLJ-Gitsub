@@ -113,12 +113,9 @@ const appData = {
             description: "This project is actually the best. Don't listen to what the other one says."
         }
     ],
-<<<<<<< HEAD
     
     
-=======
      
->>>>>>> a09bbc45d3e89488d8a05a540119b595b38ba660
     packages: [
         {
             name: "Docker",
