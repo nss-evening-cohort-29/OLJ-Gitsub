@@ -101,8 +101,20 @@ const appData = {
             id: 2,
             title: "Amazing Project",
             description: "This project is amazing!"
+        },
+        {
+            id: 3,
+            title: "The Best Project",
+            description: "This project is the best!"
+        },
+        {
+            id: 4,
+            title: "The REAL Best Project",
+            description: "This project is actually the best. Don't listen to what the other one says."
         }
     ],
+    
+    
      
     packages: [
         {
