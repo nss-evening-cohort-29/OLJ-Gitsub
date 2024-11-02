@@ -37,20 +37,20 @@
                     </div>
                 </div>
 
-                <!-- Create Pinned Repository Form -->
+                <!-- Create Project Form -->
                 <div class="card bg-dark border-secondary mb-4">
                     <div class="card-body">
                         <h3 class="card-title h5">Create a New Project</h3>
-                        <form data-form-type="pinned-repo" id="pinnedRepoForm">
+                        <form id="createProject">
                             <div class="mb-3">
-                                <label for="repoName" class="form-label">Project Title</label>
-                                <input type="text" class="form-control" id="repoName" name="name" required>
+                                <label for="projectTitle" class="form-label">Project Title</label>
+                                <input type="text" class="form-control" id="projectTitle" name="name" required>
                             </div>
                             <div class="mb-3">
-                                <label for="repoDescription" class="form-label">Description (optional)</label>
-                                <textarea class="form-control" id="repoDescription" name="description" rows="3"></textarea>
+                                <label for="projectDescription" class="form-label">Description</label>
+                                <textarea class="form-control" id="projectDescription" name="description" rows="3"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-success">Create Project</button>
+                            <button type="submit" class="btn btn-success" id="newProjectBtn">Create Project</button>
                         </form>
                     </div>
                 </div>
