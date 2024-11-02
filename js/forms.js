@@ -2,7 +2,7 @@
 // projectDescription.value
 
 import appData from "./data";
-import { renderProjects } from "./lists";
+import { renderProjects, renderPackages, renderPinnedRepos, renderRepositories } from "./lists";
 
 const projectFormSubmit = document.getElementById('createProject');
 
@@ -14,8 +14,8 @@ const createProject = (e) => {
     description: document.querySelector("#projectDescription").value
   };
   appData.projects.push(newProject);
-  console.log(appData.projects);
   renderProjects();
 };
 
 projectFormSubmit.addEventListener('submit', createProject);
+document.addEventListener('DOMContentLoaded', projectFormSubmit);
