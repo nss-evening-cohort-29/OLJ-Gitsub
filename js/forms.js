@@ -1,12 +1,12 @@
 // projectname.value
 // projectDescription.value
 
-import appData from "./data";
-import { renderProjects, renderPackages, renderPinnedRepos, renderRepositories } from "./lists";
+import appData from "./data.js";
+import { renderProjects, renderPackages, renderPinnedRepos, renderRepositories } from "./lists.js";
 
 const projectFormSubmit = document.getElementById('createProject');
 
-const createProject = (e) => {
+const newProject = (e) => {
   e.preventDefault();
   const newProject = {
     id: appData.projects.length + 1,
@@ -15,7 +15,7 @@ const createProject = (e) => {
   };
   appData.projects.push(newProject);
   renderProjects();
+  projectFormSubmit.reset();
 };
 
-projectFormSubmit.addEventListener('submit', createProject);
-document.addEventListener('DOMContentLoaded', projectFormSubmit);
+projectFormSubmit.addEventListener('submit', newProject);
