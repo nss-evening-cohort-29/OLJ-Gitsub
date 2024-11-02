@@ -9,7 +9,7 @@ const appData = {
         followers: "3",
         following: "3",
         stars: 1,
-        avatar: "assets/images/profile-pic.jpg",
+        avatar: "assets/images/profile-picture.png",
         highlights: [
             {
                 icon: "code",
@@ -43,6 +43,23 @@ const appData = {
         }
     ],
 
+    pinnedRepos: [
+        {
+            name: "Workshop",
+            description: "This workshop covers the fundamentals of developing.",
+            language: "JavaScript",
+            stars: 10,
+            forks: 8
+        },
+        {
+            name: "JS-Men",
+            description: "We're a group of men React.JS enthusiasts in NSS.",
+            language: "JavaScript",
+            stars: 9,
+            forks: 6
+        }
+    ],
+
     siteStats: {
         repoCount: 1,
         openProjects: 3,
@@ -51,7 +68,7 @@ const appData = {
 
     site: {
         name: "GitSub",
-        logo: "assets/images/logo.svg",
+        logo: "assets/images/icons8-github.svg",
         copyright: "© 2024 GitSub, Inc.",
         navigation: [
             { name: "Overview", path: "index.html" },
@@ -74,5 +91,4 @@ const appData = {
         ]
     }
 };
-
 export default appData; 
