@@ -14,13 +14,50 @@
     <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/forms.css">
 </head>
-<body>
+<body class="dark-theme">
     <div id="navbar"></div>
-    <div id="profileSidebar"></div>
-    <!-- This is where repos will be shown -->
-    <div id="content"></div>
-<!-- This is where repos will be created. -->
- <div></div>
+    
+    <!-- Main content -->
+    <div class="container-fluid mt-5 pt-4">
+        <div class="row">
+            <!-- Profile Sidebar -->
+            <div class="col-md-3">
+                <div class="profile-sidebar" id="profileSidebar">
+                    <!-- Profile content will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9">
+                <!-- Current Repositories Section -->
+                <div class="mb-4" id="cards-section">
+                    <h2 class="h5 mb-3">Currrent Repositories</h2>
+                    <div class="row" id="currentRepos">
+                        <!-- Current repos will be dynamically here -->
+                    </div>
+                </div>
+
+     <!-- Create Repositories Form -->
+                <div class="card bg-dark border-secondary mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Create a new repository</h3>
+                        <form data-form-type="create-repo" id="CreateRepoForm">
+                            <div class="mb-3">
+                                <label for="repoName" class="form-label">Repository Name</label>
+                                <input type="text" class="form-control" id="repoName" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="repoDescription" class="form-label">Description (optional)</label>
+                                <textarea class="form-control" id="repoDescription" name="description" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">Create new repository</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div id="footer"></div>
 
     <script type="module">
@@ -34,5 +71,11 @@
             renderRepositories();
     });
     </script>
+    <!-- Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script type="module" src="js/data.js"></script>
+    <script type="module" src="js/lists.js"></script>
+    <script type="module" src="js/forms.js"></script>
 </body>
 </html>

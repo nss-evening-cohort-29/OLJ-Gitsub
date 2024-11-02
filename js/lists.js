@@ -35,17 +35,22 @@ export const renderPackages = () => {
 };
 
 export const renderRepositories = () => {
-    const container = document.getElementById('content');
-    const reposHTML = appData.repositories
-        .map(repo => createRepoCard(repo))
-        .join('');
-    
-    container.innerHTML = `
-        <div class="row">
-            ${reposHTML}
-        </div>
-    `;
-};
+    const container = document.getElementById('currentRepos');
+    let domString = "";
+    appData.repositories.forEach(repo => {
+        domString += `<div class="col-md-6 mb-4">
+                <div class="card h-100 bg-dark border-secondary">
+                    <div class="card-body">
+                        <h3 class="h5 mb-1">
+                            <a href="#" class="text-primary text-decoration-none">${repo.repoTitle}</a>
+                        </h3>
+                        <p class="text-secondary mb-3">${repo.repoDescription}</p>
+                    </div>
+                </div>
+            </div>`
+    });
+    container.innerHTML = domString;
+}
 
 export const renderProjects = () => {
     const container = document.getElementById('projects');
