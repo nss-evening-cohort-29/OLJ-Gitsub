@@ -129,6 +129,7 @@ const appData = {
 
     pinnedRepos: [
         {
+            id: 1,
             name: "Workshop",
             description: "This workshop covers the fundamentals of developing.",
             language: "JavaScript",
@@ -136,6 +137,7 @@ const appData = {
             forks: 8
         },
         {
+            id: 2,
             name: "JS-Men",
             description: "We're a group of men React.JS enthusiasts in NSS.",
             language: "JavaScript",
