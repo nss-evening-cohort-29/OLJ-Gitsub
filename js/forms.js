@@ -36,3 +36,20 @@ const newPinnedRepo = (e) => {
 
 pinnedReposFormSubmit.addEventListener('submit', newPinnedRepo);
 projectFormSubmit.addEventListener('submit', newProject);
+
+
+const reposFormSubmit = document.getElementById('CreateRepoForm');
+
+const newRepository = (e) => {
+  e.preventDefault();
+  const newRepositoryObj = {
+    repoID: appData.repositories.length + 1,
+    repoTitle: document.querySelector("#repoName").value,
+    repoDescription: document.querySelector("#repoDescription").value
+  };
+  appData.repositories.push(newRepositoryObj);
+  renderRepositories();
+  reposFormSubmit.reset();
+};
+
+reposFormSubmit.addEventListener('submit', newRepository);
