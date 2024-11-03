@@ -1,12 +1,7 @@
-// projectname.value
-// projectDescription.value
-
 import appData from "./data.js";
 import { renderProjects, renderPackages, renderPinnedRepos, renderRepositories } from "./lists.js";
 
-const projectFormSubmit = document.getElementById('createProject');
-const pinnedReposFormSubmit = document.getElementById('pinnedRepoForm');
-
+// Form submit handlers
 const newProject = (e) => {
   e.preventDefault();
   const newProject = {
@@ -16,7 +11,7 @@ const newProject = (e) => {
   };
   appData.projects.push(newProject);
   renderProjects();
-  projectFormSubmit.reset();
+  e.target.reset();
 };
 
 const newPinnedRepo = (e) => {
@@ -31,14 +26,8 @@ const newPinnedRepo = (e) => {
   };
   appData.pinnedRepos.push(newPinnedRepo);
   renderPinnedRepos();
-  pinnedReposFormSubmit.reset();
-}
-
-pinnedReposFormSubmit.addEventListener('submit', newPinnedRepo);
-projectFormSubmit.addEventListener('submit', newProject);
-
-
-const reposFormSubmit = document.getElementById('CreateRepoForm');
+  e.target.reset();
+};
 
 const newRepository = (e) => {
   e.preventDefault();
@@ -49,7 +38,26 @@ const newRepository = (e) => {
   };
   appData.repositories.push(newRepositoryObj);
   renderRepositories();
-  reposFormSubmit.reset();
+  e.target.reset();
 };
 
-reposFormSubmit.addEventListener('submit', newRepository);
+// Add event listeners only if the elements exist
+document.addEventListener('DOMContentLoaded', () => {
+  // Project form
+  const projectForm = document.getElementById('createProject');
+  if (projectForm) {
+    projectForm.addEventListener('submit', newProject);
+  }
+
+  // Pinned repo form
+  const pinnedRepoForm = document.getElementById('pinnedRepoForm');
+  if (pinnedRepoForm) {
+    pinnedRepoForm.addEventListener('submit', newPinnedRepo);
+  }
+
+  // Repository form
+  const repoForm = document.getElementById('CreateRepoForm');
+  if (repoForm) {
+    repoForm.addEventListener('submit', newRepository);
+  }
+});
