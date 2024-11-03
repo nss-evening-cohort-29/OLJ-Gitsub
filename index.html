@@ -50,6 +50,18 @@
                                 <label for="repoDescription" class="form-label">Description (optional)</label>
                                 <textarea class="form-control" id="repoDescription" name="description" rows="3"></textarea>
                             </div>
+                            <div class="mb-3">
+                                <label for="repoLanguage" class="form-label">Language</label>
+                                <input type="text" class="form-control" id="repoLanguage" name="language" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="repoStars" class="form-label">Stars</label>
+                                <input type="number" class="form-control" id="repoStars" name="stars" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="repoForks" class="form-label">Forks</label>
+                                <input type="number" class="form-control" id="repoForks" name="forks" required>
+                            </div>
                             <button type="submit" class="btn btn-success">Create pinned repository</button>
                         </form>
                     </div>
