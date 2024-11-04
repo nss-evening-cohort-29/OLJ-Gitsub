@@ -36,7 +36,7 @@ const newRepository = (e) => {
     repoTitle: document.querySelector("#repoName").value,
     repoDescription: document.querySelector("#repoDescription").value
   };
-  appData.repositories.push(newRepositoryObj);
+  appData.repositories.unshift(newRepositoryObj);
   renderRepositories();
   e.target.reset();
 };
