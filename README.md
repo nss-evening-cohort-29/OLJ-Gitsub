@@ -47,20 +47,20 @@ As a software developer, I need a centralized platform to manage my repositories
 - Event-driven updates
 - Separated concerns:
 
-  - `lists.js`: This file contains functions to filter and render lists of items such as packages, repositories, projects, and pinned repositories. Some key functions include:
+  #### `lists.js`: This file contains functions to filter and render lists of items such as packages, repositories, projects, and pinned repositories. Some key functions include:
    - filterPackages: Filters the packages based on search term and type.
    - renderPackages: Renders the filtered or all packages
    - renderRepositories: Renders the list of repositories.
    - renderProjects: Renders the list of projects.
    - renderPinnedRepos: Renders the list of pinned repositories.
 
-  - `forms.js`: This file contains form submission handlers for creating new projects, pinned repositories, repositories, and packages. It includes functions to handle form submissions, update the appData object, and re-render the respective lists. Some key functions include:
+  #### `forms.js`: This file contains form submission handlers for creating new projects, pinned repositories, repositories, and packages. It includes functions to handle form submissions, update the appData object, and re-render the respective lists. Some key functions include:
    - newProject: Handles the submission of a new project form.
    - newPinnedRepo: Handles the submission of a new pinned repository form
    - newRepository: Handles the submission of a new repository form
    - newPackage: Handles the submission of a new package form.
 
-  - `utils.js`: This file contains utility functions that are used across the application. Some key functions include:
+  #### `utils.js`: This file contains utility functions that are used across the application. Some key functions include:
    - loadComponent: Dynamically loads HTML components and initializes their functionality
    - getPackageIcon: Returns an icon based on the package type.
    - createCard: Creates HTML markup for a package item.
@@ -68,7 +68,7 @@ As a software developer, I need a centralized platform to manage my repositories
    - updateActiveNavLink: Updates the active state of navigation links based on the current page.
    - renderNavbar, renderFooter, renderProfile: Functions to render the navigation bar, footer, and user profile sidebar respectively.
 
-  - `data.js`: This file contains a JavaScript object appData that holds all the data for the application. It includes user profile information, repositories, projects, packages, pinned repositories, site statistics, and site details like navigation and footer links. This data is used throughout the application to render various components.
+  #### `data.js`: This file contains a JavaScript object appData that holds all the data for the application. It includes user profile information, repositories, projects, packages, pinned repositories, site statistics, and site details like navigation and footer links. This data is used throughout the application to render various components.
 
 ### Styling
 - Custom CSS variables for theming

@@ -62,7 +62,7 @@ export const renderRepositories = () => {
     
     let domString = "";
     appData.repositories.forEach(repo => {
-        domString += `<div class="col-md-15 mb-4">
+        domString += `<div class="col-md-12 mb-4">
                 <div class="card h-100 bg-dark border-secondary">
                     <div class="card-body">
                         <h3 class="h5 mb-1">
