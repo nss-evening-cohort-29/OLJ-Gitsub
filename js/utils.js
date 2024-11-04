@@ -75,7 +75,7 @@ export const initializePackageSearch = () => {
 
 // Updates the active state of navigation links based on current page
 export const updateActiveNavLink = () => {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = window.location.pathname.split('/').pop() || 'pages/index.html';
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === currentPage) {
@@ -155,7 +155,7 @@ export const renderProfile = () => {
 
 // Initialize package search when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname.includes('packages.html')) {
+    if (window.location.pathname.includes('pages/packages.html')) {
         initializePackageSearch();
     }
 });

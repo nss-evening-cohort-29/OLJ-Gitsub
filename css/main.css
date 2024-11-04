@@ -10,7 +10,7 @@
     --green: #238636;
 }
 main {
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 body {
@@ -25,13 +25,14 @@ body {
 }
 
 .footer {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
     padding: 1rem 0;
     text-align: center;
     border-top: 0px solid var(--border-color);
     z-index: 1000;
+    height: 10px;
 }
 
 .footer-links a {

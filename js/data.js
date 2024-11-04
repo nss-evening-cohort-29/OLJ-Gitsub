@@ -9,7 +9,7 @@ const appData = {
         followers: "30",
         following: "3",
         stars: 123,
-        avatar: "assets/images/profile-picture.png",
+        avatar: "../assets/images/profile-picture.png",
         highlights: [
             {
                 icon: "code",
@@ -27,7 +27,7 @@ const appData = {
         organizations: [
             {
                 name: "NSS",
-                avatar: "assets/images/NSS-logo-horizontal-small.jpg"
+                avatar: "../assets/images/NSS-logo-horizontal-small.jpg"
             }
         ]
     },
@@ -177,10 +177,10 @@ const appData = {
         logo: "assets/images/icons8-github.svg",
         copyright: "© 2024 GitSub, Inc.",
         navigation: [
-            { name: "Overview", path: "index.html" },
-            { name: "Repositories", path: "repos.html" },
-            { name: "Projects", path: "projects.html" },
-            { name: "Packages", path: "packages.html" }
+            { name: "Overview", path: "pages/index.html" },
+            { name: "Repositories", path: "pages/repos.html" },
+            { name: "Projects", path: "pages/projects.html" },
+            { name: "Packages", path: "pages/packages.html" }
         ],
         footerLinks: [
             { name: "Terms", path: "#" },
