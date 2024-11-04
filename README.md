@@ -1,19 +1,19 @@
 # GITSUB
 ## Overview
-GITSUB is a GitHub-inspired web application that provides comprehensive package, repository, and project management functionality. Built with vanilla JavaScript, HTML, CSS, and Bootstrap, it offers a responsive dark-themed interface for managing software development resources.
+GITSUB is a GitHub-inspired web application with a comprehensive package, repository, and project management functionality. Built with vanilla JavaScript, HTML, CSS, and Bootstrap, it offers a responsive dark-themed interface for managing software development resources.
 
 ## Screenshots
 *Overview Page: The main dashboard showing pinned repositories and profile information*
-![Overview Page](assets\images\Screenshoots\OverviewPage.png)
+![Overview Page](assets/images/Screenshoots/OverviewPage.png)
 
 *Packages Page: Package management interface with filtering and creation options*
-![Packages Page](assets\images\Screenshoots\PackagesPage.png)
+![Packages Page](assets/images/Screenshoots/PackagesPage.png)
 
 *Projects Page: Project cards and creation form for managing development initiatives*
-![Projects Page](assets\images\Screenshoots\ProjectsPage.png)
+![Projects Page](assets/images/Screenshoots/ProjectsPage.png)
 
 *Repositories Page: Repository listing with detailed statistics and creation form*
-![Repositories Page](assets\images\Screenshoots\RepositoriesPage.png)
+![Repositories Page](assets/images/Screenshoots/RepositoriesPage.png)
 
 ## Project Links
 - [ERD](https://dbdiagram.io/d/GitSub-OJL-6705c146fb079c7ebdcbd8e6)
