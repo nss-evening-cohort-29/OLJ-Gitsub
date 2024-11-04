@@ -6,9 +6,9 @@ const appData = {
         role: "Developers",
         location: "USA",
         website: "https://github.com/nss-evening-cohort-29/OLJ-Gitsub",
-        followers: "3",
+        followers: "30",
         following: "3",
-        stars: 1,
+        stars: 123,
         avatar: "assets/images/profile-picture.png",
         highlights: [
             {
@@ -113,17 +113,31 @@ const appData = {
             description: "This project is actually the best. Don't listen to what the other one says."
         }
     ],
-    
-    
      
     packages: [
         {
+            id: 1,
             name: "Docker",
-            description: "A software platform used for building applications based on containers — small and lightweight execution environments.",
-            icon: "🐳",
+            description: "A software platform used for building applications based on containers.",
             type: "container",
-            iconColor: "text-info",
-            beta: false
+        },
+        {
+            id: 2,
+            name: "Apache Maven",
+            description: "A default package manager used for the Java programming.",
+            type: "maven",
+        },
+        {
+            id: 3,
+            name: "NuGet",
+            description: "A open source package manager used for the Microsoft development platform (.NET)",
+            type: "nuget",
+        },
+        {
+            id: 4,
+            name: "RubyGems",
+            description: "A standard format for distributing Ruby programs.",
+            type: "RubyGems",
         }
     ],
 
@@ -143,13 +157,19 @@ const appData = {
             language: "JavaScript",
             stars: 9,
             forks: 6
+        },
+        {
+            id: 3,
+            name: "GitSub",
+            description: "A simple, clean, and fast GitSub.",
+            language: "JavaScript, HTML, CSS",
+            stars: 9,
+            forks: 6
         }
     ],
 
     siteStats: {
-        repoCount: 1,
-        openProjects: 3,
-        closedProjects: 0
+        repoCount: 4
     },
 
     site: {

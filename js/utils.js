@@ -1,76 +1,79 @@
 import { filterPackages, renderPackages } from './lists.js';
 import appData from './data.js';
 
-export const formatNumber = (num) => {
-    if (num >= 1000) {
-        return (num/1000).toFixed(1) + 'k';
-    }
-    return num.toString();
-};
-
-export const createCard = (item) => {
-    return `
-        <div class="card bg-dark border-secondary mb-3">
-            <div class="card-body">
-                <h5 class="card-title">${item.name}</h5>
-                <p class="card-text">${item.description}</p>
-            </div>
-        </div>
-    `;
-};
-
-export const initializePackageSearch = () => {
-    const searchInput = document.querySelector('[aria-label="Search packages"]');
-    const typeSelect = document.querySelector('[aria-label="Package type"]');
-
-    if (searchInput && typeSelect) {
-        searchInput.addEventListener('input', (e) => {
-            filterPackages(e.target.value, typeSelect.value.toLowerCase());
-        });
-
-        typeSelect.addEventListener('change', (e) => {
-            filterPackages(searchInput.value, e.target.value.toLowerCase());
-        });
-    }
-};
-
-export const handlePackageAction = (packageName, action) => {
-    switch (action) {
-        case 'delete':
-            if (confirm(`Are you sure you want to delete ${packageName}?`)) {
-                appData.packages = appData.packages.filter(pkg => pkg.name !== packageName);
-                renderPackages();
-            }
-            break;
-        // Add more actions as needed
-    }
-};
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname.includes('packages.html')) {
-        initializePackageSearch();
-    }
-});
-
-// Add these functions to utils.js
+// Core utility functions
+//Loads HTML components dynamically and initializes their functionality
 export const loadComponent = async (elementId, componentPath) => {
     try {
         const response = await fetch(componentPath);
         const html = await response.text();
-        document.getElementById(elementId).innerHTML = html;
+        const element = document.getElementById(elementId);
         
-        if (componentPath.includes('navbar')) {
-            updateActiveNavLink();
-            renderNavbar();
-        } else if (componentPath.includes('footer')) {
-            renderFooter();
+        if (element) {
+            element.innerHTML = html;
+
+            // Footer specific setup
+            if (componentPath.includes('footer')) {
+                renderFooter();
+            }
+
+            // Navbar specific setup
+            if (componentPath.includes('navbar')) {
+                updateActiveNavLink();
+                renderNavbar();
+            }
         }
     } catch (error) {
         console.error('Error loading component:', error);
     }
 };
 
+
+// Returns an icon based on package type
+export const getPackageIcon = (type) => {
+    const icons = {
+        container: '🐳',
+        maven: '☕',
+        npm: '📦',
+        nuget: '🔷',
+        RubyGems: '💎'
+    };
+    return icons[type.toLowerCase()] || '📦';
+};
+
+// Creates HTML card markup for a package item
+export const createCard = (item) => {
+    const icon = getPackageIcon(item.type);
+    return `
+        <div class="card bg-dark border-secondary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">${icon} ${item.name}</h5>
+                <p class="card-text">${item.description}</p>
+            </div>
+        </div>
+    `;
+};
+
+// Event handlers and initializers
+// Initializes package search functionality
+export const initializePackageSearch = () => {
+    const searchInput = document.getElementById('package-search');
+    const typeSelect = document.getElementById('package-type');
+
+    if (searchInput && typeSelect) {
+        // Handle search input changes
+        searchInput.addEventListener('input', (e) => {
+            filterPackages(e.target.value, typeSelect.value.toLowerCase());
+        });
+
+        // Handle type selection changes
+        typeSelect.addEventListener('change', (e) => {
+            filterPackages(searchInput.value, e.target.value.toLowerCase());
+        });
+    }
+};
+
+// Updates the active state of navigation links based on current page
 export const updateActiveNavLink = () => {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -81,7 +84,27 @@ export const updateActiveNavLink = () => {
     });
 };
 
-// Add this function to utils.js
+// UI Component Renderers
+// Renders the navigation bar stats
+export const renderNavbar = () => {
+    const { siteStats } = appData;
+    document.querySelectorAll('.repo-count').forEach(el => {
+        el.textContent = siteStats.repoCount;
+    });
+};
+
+// Renders the footer content
+export const renderFooter = () => {
+    const { site } = appData;
+    document.getElementById('copyright').textContent = site.copyright;
+    
+    const footerLinksContainer = document.getElementById('footerLinks');
+    footerLinksContainer.innerHTML = site.footerLinks
+        .map(link => `<a href="${link.path}">${link.name}</a>`)
+        .join('');
+};
+
+// Renders the user profile sidebar
 export const renderProfile = () => {
     const profileContainer = document.getElementById('profileSidebar');
     const { user } = appData;
@@ -98,7 +121,6 @@ export const renderProfile = () => {
         <div class="d-grid gap-2 mb-3">
             <button class="btn btn-outline-light">Follow</button>
             <button class="btn btn-outline-danger">❤ Sponsor</button>
-            <button class="btn btn-outline-secondary">...</button>
         </div>
         
         <div class="profile-stats mb-3">
@@ -131,23 +153,9 @@ export const renderProfile = () => {
     `;
 };
 
-
-
-// Add this function
-export const renderNavbar = () => {
-    const { siteStats } = appData;
-    document.querySelectorAll('.repo-count').forEach(el => {
-        el.textContent = siteStats.repoCount;
-    });
-};
-
-// Add these functions
-export const renderFooter = () => {
-    const { site } = appData;
-    document.getElementById('copyright').textContent = site.copyright;
-    
-    const footerLinksContainer = document.getElementById('footerLinks');
-    footerLinksContainer.innerHTML = site.footerLinks
-        .map(link => `<a href="${link.path}">${link.name}</a>`)
-        .join('');
-};
+// Initialize package search when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.includes('packages.html')) {
+        initializePackageSearch();
+    }
+});
