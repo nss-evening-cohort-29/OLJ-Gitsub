@@ -7,7 +7,7 @@ export const filterPackages = (searchTerm = '', type = 'all') => {
     filteredPackages = appData.packages.filter(pkg => {
         const matchesSearch = pkg.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                             pkg.description.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesType = type === 'all' || pkg.type === type;
+        const matchesType = type.toLowerCase() === 'all' || pkg.type.toLowerCase() === type.toLowerCase();
         return matchesSearch && matchesType;
     });
     renderPackages();
@@ -62,7 +62,7 @@ export const renderRepositories = () => {
     
     let domString = "";
     appData.repositories.forEach(repo => {
-        domString += `<div class="col-md-6 mb-4">
+        domString += `<div class="col-md-15 mb-4">
                 <div class="card h-100 bg-dark border-secondary">
                     <div class="card-body">
                         <h3 class="h5 mb-1">

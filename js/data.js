@@ -34,60 +34,20 @@ const appData = {
 
     repositories: [
         {repoID: 1, 
-            repoTitle : "Sorting Hat", 
-            repoDescription: "tbd", 
-            repoTags : [
-                {tag: "blah"},
-                {tag: "blah"},
-                {tag: "blah"}
-            ],
-            repoType: "JavaScript", 
-            stars: 6, 
-            branchMerges: 17, 
-            issues: "2 issues needs help",
-            lastUpdated: "Updated 4 days ago"
+            repoTitle : "Google", 
+            repoDescription: "Yeah, I made google.", 
         },
         {repoID: 2, 
-            repoTitle : "Random Repo", 
-            repoDescription: "tbd", 
-            repoTags : [
-                {tag: "blah"},
-                {tag: "blah"},
-                {tag: "blah"}
-            ],
-            repoType: "JavaScript", 
-            stars: 6, 
-            branchMerges: 17, 
-            issues: "9 issues needs help",
-            lastUpdated: "Updated 1 day ago"
+            repoTitle : "Random Number Generator", 
+            repoDescription: "Can't decide the number of your next sports jersey? Well thanks to functions in JS, this random number generator has solved your problems!", 
         },
         {repoID: 3, 
             repoTitle : "Calculator", 
-            repoDescription: "tbd", 
-            repoTags : [
-                {tag: "blah"},
-                {tag: "blah"},
-                {tag: "blah"}
-            ],
-            repoType: "JavaScript", 
-            stars: 6, 
-            branchMerges: 17,  
-            // issues: "0 issues needs help",
-            lastUpdated: "Updated 68 days ago"
+            repoDescription: "A fully functioning calculator made through HTML, styled by CSS and functions through JavaScript!", 
         },
         {repoID: 4, 
-            repoTitle : "test-repo", 
-            repoDescription: "tbd", 
-            repoTags : [
-                {tag: "blah"},
-                {tag: "blah"},
-                {tag: "blah"}
-            ],
-            repoType: "JavaScript", 
-            stars: 6, 
-            branchMerges: 17,  
-            // issues: "0 issues needs help",
-            lastUpdated: "Updated 137 days ago"
+            repoTitle : "test-repo-1", 
+            repoDescription: "My first test repo! This will be in all the history books!", 
         },
     ],
 
