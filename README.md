@@ -15,6 +15,9 @@ GITSUB is a GitHub-inspired web application with a comprehensive package, reposi
 *Repositories Page: Repository listing with detailed statistics and creation form*
 ![Repositories Page](assets/images/Screenshoots/RepositoriesPage.png)
 
+## Loom Video
+(https://www.loom.com/share/7cf1a8f172334e1394fc649a755f890c?sid=37e7d9f7-0dba-4fe4-9fde-d846ee57d01e)
+
 ## Project Links
 - [ERD](https://dbdiagram.io/d/GitSub-OJL-6705c146fb079c7ebdcbd8e6)
 - [Wireframe](https://www.figma.com/design/8vIX1yEXd2UxdWARbWqAje/GitSub?node-id=0-1&node-type=canvas)
