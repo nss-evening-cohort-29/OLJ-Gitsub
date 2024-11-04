@@ -1,4 +1,5 @@
 import appData from './data.js';
+import { getPackageIcon } from './utils.js';
 
 let filteredPackages = [];
 
@@ -18,7 +19,23 @@ export const renderPackages = () => {
     const packagesToRender = filteredPackages.length > 0 ? filteredPackages : appData.packages;
     
     const packagesHTML = packagesToRender
-        .map(pkg => createPackageCard(pkg))
+        .map(pkg => `
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 bg-dark border-secondary">
+                    <div class="card-body">
+                        <h3 class="h5 mb-1">
+                            <a href="#" class="text-primary text-decoration-none">
+                                ${getPackageIcon(pkg.type)} ${pkg.name}
+                            </a>
+                        </h3>
+                        <p class="text-secondary mb-3">${pkg.description}</p>
+                        <div class="d-flex align-items-center">
+                            <span class="badge bg-secondary me-2">${pkg.type}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `)
         .join('');
     
     container.innerHTML = packagesToRender.length > 0 ? `
@@ -35,7 +52,14 @@ export const renderPackages = () => {
 };
 
 export const renderRepositories = () => {
-    const container = document.getElementById('currentRepos');
+    const reposContainer = document.getElementById('currentRepos');
+    const repoCountSpan = document.getElementById('repoCountSpan');
+    
+    // Update repo count display
+    if (repoCountSpan) {
+        repoCountSpan.textContent = `(${appData.repositories.length})`;
+    }
+    
     let domString = "";
     appData.repositories.forEach(repo => {
         domString += `<div class="col-md-6 mb-4">
@@ -49,7 +73,7 @@ export const renderRepositories = () => {
                 </div>
             </div>`
     });
-    container.innerHTML = domString;
+    reposContainer.innerHTML = domString;
 }
 
 export const renderProjects = () => {

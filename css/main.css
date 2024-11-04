@@ -9,6 +9,9 @@
     --link-color: #58a6ff;
     --green: #238636;
 }
+main {
+    margin-bottom: 80px;
+}
 
 body {
     margin: 0;
@@ -21,46 +24,35 @@ body {
     flex-direction: column;
 }
 
-.navbar {
-    background-color: var(--bg-darker);
-    padding: 16px;
-    border-bottom: 1px solid var(--border-color);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
 .footer {
-    margin-top: auto !important;
-    background-color: var(--bg-dark);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem 0;
     text-align: center;
+    border-top: 0px solid var(--border-color);
+    z-index: 1000;
 }
 
 .footer-links a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.875rem;
+    font-size: 20px;
     transition: color 0.2s ease;
-    margin: auto 0.5rem;
+    margin: auto 1rem;
+    opacity: 1;
 }
 
 .footer-links a:hover {
     color: var(--link-color);
-    text-decoration: underline;
-}
-
-.org-avatar {
-    width: 300px;
-    height: 100px;
-    object-fit: contain;
-    border-radius: 5px;
+    text-decoration: none;
+    opacity: 1;
 }
 
 .card-title, .form-label {
     color: var(--text-primary)
 }
 
-#cards-section {
-    margin-top: 20px;
+#package-search::placeholder {
+    color: var(--text-primary);
 }

@@ -41,6 +41,20 @@ const newRepository = (e) => {
   e.target.reset();
 };
 
+const newPackage = (e) => {
+  e.preventDefault();
+  const newPackage = {
+    id: appData.packages.length + 1,
+    name: document.querySelector("#packageName").value,
+    description: document.querySelector("#packageDescription").value,
+    type: document.querySelector("#packageType").value,
+    iconColor: "text-primary"
+  };
+  appData.packages.push(newPackage);
+  renderPackages();
+  e.target.reset();
+};
+
 // Add event listeners only if the elements exist
 document.addEventListener('DOMContentLoaded', () => {
   // Project form
@@ -59,5 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const repoForm = document.getElementById('CreateRepoForm');
   if (repoForm) {
     repoForm.addEventListener('submit', newRepository);
+  }
+
+  // Package form
+  const packageForm = document.getElementById('createPackage');
+  if (packageForm) {
+    packageForm.addEventListener('submit', newPackage);
   }
 });
