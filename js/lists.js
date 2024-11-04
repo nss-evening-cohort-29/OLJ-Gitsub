@@ -131,11 +131,11 @@ export const renderPinnedRepos = () => {
 // Initialize list based on current page
 document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
-    if (path.includes('packages.html')) {
+    if (path.includes('pages/packages.html')) {
         renderPackages();
-    } else if (path.includes('repos.html')) {
+    } else if (path.includes('pages/repos.html')) {
         renderRepositories();
-    } else if (path.includes('projects.html')) {
+    } else if (path.includes('pages/projects.html')) {
         renderProjects();
     } else {
         // Overview page (index.html)
