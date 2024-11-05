@@ -4,16 +4,16 @@ GITSUB is a GitHub-inspired web application with a comprehensive package, reposi
 
 ## Screenshots
 *Overview Page: The main dashboard showing pinned repositories and profile information*
-![Overview Page](assets/images/Screenshoots/OverviewPage.png)
+![Overview Page](assets/images/Screenshots/OverviewPage.png)
 
 *Packages Page: Package management interface with filtering and creation options*
-![Packages Page](assets/images/Screenshoots/PackagesPage.png)
+![Packages Page](assets/images/Screenshots/PackagesPage.png)
 
 *Projects Page: Project cards and creation form for managing development initiatives*
-![Projects Page](assets/images/Screenshoots/ProjectsPage.png)
+![Projects Page](assets/images/Screenshots/ProjectsPage.png)
 
 *Repositories Page: Repository listing with detailed statistics and creation form*
-![Repositories Page](assets/images/Screenshoots/RepositoriesPage.png)
+![Repositories Page](assets/images/Screenshots/RepositoriesPage.png)
 
 ## Loom Video
 (https://www.loom.com/share/7cf1a8f172334e1394fc649a755f890c?sid=37e7d9f7-0dba-4fe4-9fde-d846ee57d01e)
